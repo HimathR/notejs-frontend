@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import * as esbuild from "esbuild-wasm";
 import { unpkgPathPlugin } from "./plugins/unpkg-path-plugin";
 import { fetchPlugin } from "./plugins/fetch-plugin";
+import CodeEditor from "./components/code-editor";
 
 const App = () => {
   const [input, setInput] = useState("");
-  const [code, setCode] = useState("");
   const ref = useRef<any>();
   const iframe = useRef<any>();
 
@@ -27,6 +27,8 @@ const App = () => {
     if (!ref.current) {
       return;
     }
+    iframe.current.srcdoc = html; // reset iframe contents
+
     // bundling process
     const result = await ref.current.build({
       entryPoints: ["index.js"],
@@ -63,14 +65,22 @@ const App = () => {
 
   return (
     <div>
+      <CodeEditor
+        initialValue="console.log('Hello World');"
+        onChange={(value) => setInput(value)}
+      />
       <textarea value={input} onChange={(e) => setInput(e.target.value)}>
         {input}
       </textarea>
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <pre>{code}</pre>
-      <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html} />
+      <iframe
+        ref={iframe}
+        title="codeprev"
+        sandbox="allow-scripts"
+        srcDoc={html}
+      />
     </div>
   );
 };
