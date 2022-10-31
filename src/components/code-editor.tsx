@@ -1,14 +1,14 @@
+import "./code-editor.css";
+import "./syntax.css";
+import { useRef } from "react";
 import MonacoEditor, { EditorDidMount } from "@monaco-editor/react";
 import prettier from "prettier";
 import parser from "prettier/parser-babel";
-import { useRef } from "react";
-import Button from "@atlaskit/button";
-import StarFilledIcon from "@atlaskit/icon/glyph/star-filled";
 import codeShift from "jscodeshift";
 import Highlighter from "monaco-jsx-highlighter";
-import "./syntax.css";
+import Button from "@atlaskit/button";
+import StarFilledIcon from "@atlaskit/icon/glyph/star-filled";
 
-import "./code-editor.css";
 interface CodeEditorProps {
   initialValue: string;
   onChange(value: string): void;
@@ -16,16 +16,18 @@ interface CodeEditorProps {
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   const editorRef = useRef<any>();
+
   const onEditorDidMount: EditorDidMount = (getValue, monacoEditor) => {
     editorRef.current = monacoEditor;
     monacoEditor.onDidChangeModelContent(() => {
       onChange(getValue());
     });
+
     monacoEditor.getModel()?.updateOptions({ tabSize: 2 });
 
     const highlighter = new Highlighter(
       // @ts-ignore
-      window.monaco, // reference to monaco editor
+      window.monaco,
       codeShift,
       monacoEditor
     );
@@ -34,7 +36,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       () => {},
       undefined,
       () => {}
-    ); // when editor content changes, highlight JSX
+    );
   };
 
   const onFormatClick = () => {
@@ -52,7 +54,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       })
       .replace(/\n$/, "");
 
-    // set formatted value back in editor
+    // set the formatted value back in the editor
     editorRef.current.setValue(formatted);
   };
 
@@ -69,9 +71,9 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
       <MonacoEditor
         editorDidMount={onEditorDidMount}
         value={initialValue}
-        height="500px"
         theme="dark"
         language="javascript"
+        height="100%"
         options={{
           wordWrap: "on",
           minimap: { enabled: false },
@@ -81,9 +83,6 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
           fontSize: 16,
           scrollBeyondLastLine: false,
           automaticLayout: true,
-          cursorStyle: "block",
-          cursorblink: "phase",
-          cursorWidth: 10,
         }}
       />
     </div>
