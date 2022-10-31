@@ -5,3 +5,4 @@ export interface Cell {
 }
 
 export type CellTypes = "code" | "text";
+export type Direction = "up" | "down";
