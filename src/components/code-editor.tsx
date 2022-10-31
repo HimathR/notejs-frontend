@@ -62,7 +62,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     <div className="editor-wrapper">
       <Button
         className="button-format"
-        iconBefore={<StarFilledIcon label="" size="medium" />}
+        iconBefore={<StarFilledIcon label="" size="small" />}
         onClick={onFormatClick}
         appearance="primary"
       >

@@ -41,6 +41,7 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
 
   useEffect(() => {
     iframe.current.srcdoc = html;
+    // we need to wait for the iframe to load before we can send the code to it
     setTimeout(() => {
       iframe.current.contentWindow.postMessage(code, "*");
     }, 50);
