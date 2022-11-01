@@ -1,14 +1,33 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import reducers from "./reducers";
 import { ActionType } from "./action-types";
-import { Action } from "./actions";
-import { Dispatch } from "redux";
+import reducers from "./reducers";
 
 export const store = createStore(reducers, {}, applyMiddleware(thunk));
 
+// Manual Testing Guides:
 const state = store.getState();
-// some manual testing
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: null,
+    type: "code",
+  },
+});
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: null,
+    type: "text",
+  },
+});
+store.dispatch({
+  type: ActionType.INSERT_CELL_BEFORE,
+  payload: {
+    id: null,
+    type: "text",
+  },
+});
 store.dispatch({
   type: ActionType.INSERT_CELL_BEFORE,
   payload: {
