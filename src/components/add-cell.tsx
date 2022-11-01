@@ -10,9 +10,21 @@ const AddCell: React.FC<AddCellProps> = ({ nextCellId }) => {
   // put out action creators
   const { insertCellBefore } = useActions();
   return (
-    <div>
-      <Button onClick={() => insertCellBefore(nextCellId, "code")}>Code</Button>
-      <Button onClick={() => insertCellBefore(nextCellId, "text")}>Text</Button>
+    <div className="add-cell">
+      <div className="add-buttons">
+        <Button
+          onClick={() => insertCellBefore(nextCellId, "code")}
+          appearance="primary"
+        >
+          Code
+        </Button>
+        <Button
+          onClick={() => insertCellBefore(nextCellId, "text")}
+          appearance="primary"
+        >
+          Text
+        </Button>
+      </div>
     </div>
   );
 };
