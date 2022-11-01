@@ -4,7 +4,9 @@
 }
 
 .action-bar-wrapper {
-  height: 38px;
+  height: 37px;
   width: 100%;
   background-color: #0052cc;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
