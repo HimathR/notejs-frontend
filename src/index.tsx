@@ -7,14 +7,40 @@ import "./index.css";
 import "bulmaswatch/superhero/bulmaswatch.min.css";
 // import png from notejslogo.png
 import png from "./notejslogo.png";
+import MDEditor from "@uiw/react-md-editor";
+import "./components/text-editor.css";
+import { useState } from "react";
+
+const initcontents =
+  "# Welcome to NoteJS!\nA JavaScript + Markdown editor! Click on a **code** or **text** button to get started. This application was built with React + TypeScript. Redux was used for state management and many of the components were taken from the AtlasKit UI  from the Atlassian Design System.\n## Information: \n- [Github Repo](https://github.com/)\n- [My LinkedIn](https://www.linkedin.com/in/himath-ratnayake/)\n- [Portfolio Website](https://www.himathsprojects.xyz/)\n ### PS: Click the NoteJS logo to close this modal!";
+
+const Results = () => (
+  <div className="text-editor-card" id="intro">
+    <div className="card-content">
+      <MDEditor.Markdown source={initcontents || "Click To Edit"} />
+    </div>
+  </div>
+);
 
 const App = () => {
+  const [showResults, setShowResults] = useState(true);
+  const onClick = () => setShowResults(!showResults);
+
   return (
     <div className="main">
       <Provider store={store}>
         <div>
           <div className="title">
-            <img src={png} className="notejsimg" alt="notejslogo" />
+            <img
+              src={png}
+              className="notejsimg"
+              alt="notejslogo"
+              onClick={onClick}
+            />
+          </div>
+          <div>
+            {/* TURN THIS INTO A MODAL OR COLLAPSIBLE WHEN U CLICK THE LOGO! */}
+            {showResults ? <Results /> : null}
           </div>
           <CellList />
         </div>
