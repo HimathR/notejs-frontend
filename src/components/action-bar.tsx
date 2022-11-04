@@ -1,5 +1,3 @@
-import { Action } from "../state/actions";
-import { ActionType } from "../state/action-types";
 import { useActions } from "../hooks/use-actions";
 import Button from "@atlaskit/button";
 import "./action-bar.css";
