@@ -72,7 +72,14 @@ export default function OBModal() {
                   </a>
                 </li>
               </ul>
-              <div style={{ padding: "10px" }}></div>
+              <Button
+                appearance="subtle"
+                onClick={closeModal}
+                style={{ float: "right" }}
+              >
+                Close
+              </Button>
+              <div style={{ padding: "25px" }}></div>
             </ModalBody>
           </Modal>
         )}
