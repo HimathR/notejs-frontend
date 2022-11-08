@@ -3,22 +3,21 @@ import { useTypedSelector } from "../hooks/useTypedSelector";
 import AddCell from "./add-cell";
 import CellListItem from "./cell-list-item";
 import "./cell-list.css";
-import { useActions } from "../hooks/use-actions";
-import { useEffect } from "react";
 
 const CellList: React.FC = () => {
   const cells = useTypedSelector(({ cells: { order, data } }) => {
     return order.map((id) => data[id]);
   });
 
-  const { fetchCells, saveCells } = useActions();
-  useEffect(() => {
-    fetchCells(cells);
-  }, []);
+  // the following actions are not applicable in the web version
+  // const { fetchCells, saveCells } = useActions();
+  // useEffect(() => {
+  //   fetchCells(cells);
+  // }, []);
 
-  useEffect(() => {
-    saveCells();
-  }, [JSON.stringify(cells)]);
+  // useEffect(() => {
+  //   saveCells();
+  // }, [JSON.stringify(cells)]);
 
   const renderedCells = cells.map((cell) => (
     <React.Fragment key={cell.id}>

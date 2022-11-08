@@ -1,37 +1,14 @@
 import { useCallback, useState } from "react";
-
-import { css } from "@emotion/react";
-
 import Button from "@atlaskit/button/standard-button";
-import { subtleText } from "@atlaskit/theme/colors";
-import { gridSize } from "@atlaskit/theme/constants";
-import { token } from "@atlaskit/tokens";
-
 import Modal, {
   ModalBody,
   ModalHeader,
   ModalTitle,
   ModalTransition,
-  useModal,
 } from "@atlaskit/modal-dialog";
 import welcomeImage from "./welcome.png";
-const footerStyles = css({
-  display: "flex",
-  padding: gridSize() * 3,
-  alignItems: "center",
-  justifyContent: "space-between",
-});
 
-const wrapperStyles = css({
-  display: "flex",
-  alignItems: "center",
-  color: token("color.text.subtlest", subtleText()),
-  cursor: "help",
-});
-
-const marginLeftStyles = css({ marginLeft: "1em" });
-
-export default function Example() {
+export default function OBModal() {
   const [isOpen, setIsOpen] = useState(false);
   const openModal = useCallback(() => setIsOpen(true), []);
   const closeModal = useCallback(() => setIsOpen(false), []);
@@ -39,7 +16,7 @@ export default function Example() {
   return (
     <div>
       <Button appearance="primary" onClick={openModal}>
-        Click Me For A Tutorial!
+        App Info And Links
       </Button>
 
       <ModalTransition>
@@ -47,10 +24,55 @@ export default function Example() {
           <Modal onClose={closeModal}>
             <img src={welcomeImage} />
             <ModalHeader>
-              <ModalTitle>Welcome To NoteJS! [Web Version]</ModalTitle>
+              <ModalTitle>
+                <b>NoteJS Info</b>
+              </ModalTitle>
             </ModalHeader>
             <ModalBody>
-              <h1>A JavaScript + Markdown editor!</h1>
+              This application was built with <b>React + TypeScript. Redux </b>
+              was used for state management and many of the components were
+              taken from the <b>AtlasKit UI</b> of the Atlassian Design System.
+              <div style={{ padding: "10px" }}></div>
+              <b>My Links:</b>
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com/HimathR/notejs/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    - GitHub Repo (Main)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/HimathR/notejs-frontend/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    - GitHub Repo (Web Version)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/himath-ratnayake/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    - My LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.himathsprojects.xyz/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    - My Personal Website
+                  </a>
+                </li>
+              </ul>
+              <div style={{ padding: "10px" }}></div>
             </ModalBody>
           </Modal>
         )}

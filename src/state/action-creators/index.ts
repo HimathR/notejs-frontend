@@ -75,12 +75,12 @@ export const createBundle = (cellId: string, input: string) => {
   };
 };
 
-export const fetchCells = (cellData: any) => {
+export const fetchCells = () => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({ type: ActionType.FETCH_CELLS });
 
     try {
-      const { data }: { data: Cell[] } = cellData;
+      const { data }: { data: Cell[] } = await axios.get("/cells");
 
       dispatch({
         type: ActionType.FETCH_CELLS_COMPLETE,
