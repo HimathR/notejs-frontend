@@ -10,21 +10,31 @@ import png from "./notejslogo.png";
 import MDEditor from "@uiw/react-md-editor";
 import "./components/text-editor.css";
 import { useEffect, useState } from "react";
-// import Example from "./components/onboarding";
+import OBModal from "./components/onboarding";
+import Footer from "./components/footer";
 
-const initcontents = `# Welcome to NoteJS!\nA JavaScript + Markdown editor! 
+const initcontents = `# Welcome to NoteJS!\n
+### Please Note: This is the **web** version of NoteJS, and only serves as a simple demo of the actual application functionality. 
+To use the full version of NoteJS, please download the CLI from GitHub! Full instructions and code is available in my GitHub repo linked below. 
+Simply run __**npx himath-notejs serve**__ in your terminal to get started with the full experience, including proper data persistence!
+For the time being, this web version will not save your data but you can still export any code you write in json form, and import it into the CLI version with the export button.
+
 Click on a **code** or **text** button to get started. 
 This application was built with React + TypeScript. 
 Redux was used for state management and many of the components were taken from the AtlasKit UI 
-from the Atlassian Design System.\n## Information: \n- [Github Repo](https://github.com/)\n
+from the Atlassian Design System.\n
+
+## Information: \n- [Github Repo (Main)](https://github.com/HimathR/notejs/)\n
+- [Github Repo (Web Version)](https://github.com/HimathR/notejs-frontend/)\n
 - [My LinkedIn](https://www.linkedin.com/in/himath-ratnayake/)\n
 - [Portfolio Website](https://www.himathsprojects.xyz/)\n 
-### PS: Click the NoteJS logo to close this modal!`;
+`;
 
 const Results = () => (
   <div className="text-editor-card" id="intro">
     <div className="card-content">
       <MDEditor.Markdown source={initcontents || "Click To Edit"} />
+      <OBModal></OBModal>
     </div>
   </div>
 );
@@ -57,14 +67,14 @@ const App = () => {
               onClick={onClick}
             />
           </div>
-          {/* <Example /> */}
+
           <div>{showResults ? <Results /> : null}</div>
 
           <CellList />
+          <Footer />
         </div>
       </Provider>
     </div>
   );
 };
-
 ReactDOM.render(<App />, document.querySelector("#root"));

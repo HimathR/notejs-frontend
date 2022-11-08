@@ -6,6 +6,7 @@
     "@atlaskit/button": "^16.3.9",
     "@atlaskit/code": "^14.4.0",
     "@atlaskit/icon": "^21.11.0",
+    "@atlaskit/modal-dialog": "^12.4.1",
     "@atlaskit/progress-indicator": "^9.3.2",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@monaco-editor/react": "3.7.5",

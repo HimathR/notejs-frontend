@@ -4,9 +4,6 @@ import "./action-bar.css";
 import Tooltip from "@atlaskit/tooltip";
 
 interface ActionBarProps {
-  //   actions: Action[];
-  //   className?: string;
-  //   onAction: (action: Action) => void;
   id: string;
 }
 
