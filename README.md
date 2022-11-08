@@ -1,46 +1,17 @@
-# Getting Started with Create React App
+# Welcome To NoteJS! 
+![image](https://user-images.githubusercontent.com/59962329/200509270-e7b7674d-4e1d-40d0-ba7d-49c4085376d1.png)
+This is a JavaScript + Markdown editor inspired by Jupyter Notebook. This repository contains the web version of NoteJS which lacks proper data persistence but can still quickly showcase the basic functionalities of the app. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app is deployed at the following site: https://notejs.himathsprojects.xyz/
 
-## Available Scripts
+This project is written React + TypeScript with Redux being used for state management. The project also utilises the Atlassian's Design system for component styling and modals. Bundling is carried out using ESBuild, allowing for super speedy code execution
 
-In the project directory, you can run:
+The code editor used is the Monaco Editor and includes formatting using prettier, as well as some custom functions. Currently, these include:
+* show(variable) which allows users to show a variable in the sandboxed iframe, rather than cumbersomely console logging and checking devtools
+* recolor("colour") which allows users to change the colour of the iframe output to their desired choice
 
-### `npm start`
+Moreover, just like Jupyter notebook, NoteJS can handle consecutive code execution. For example, if you declare a variable in cell A, then you can still access that variable in cell B, allowing for a more convenient user experience. 
+NoteJS is also able to handle some basic imports, including previewing of React components and CSS. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+A link to the npx version of this project can be found at this repo. This includes local APIs for data persistence too! 
+https://github.com/HimathR/notejs
