@@ -10,6 +10,7 @@ import png from "./notejslogo.png";
 import MDEditor from "@uiw/react-md-editor";
 import "./components/text-editor.css";
 import { useEffect, useState } from "react";
+// import Example from "./components/onboarding";
 
 const initcontents = `# Welcome to NoteJS!\nA JavaScript + Markdown editor! 
 Click on a **code** or **text** button to get started. 
@@ -56,7 +57,9 @@ const App = () => {
               onClick={onClick}
             />
           </div>
+          {/* <Example /> */}
           <div>{showResults ? <Results /> : null}</div>
+
           <CellList />
         </div>
       </Provider>
