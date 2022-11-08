@@ -3,8 +3,7 @@
 <p align="center">
   <img src="https://user-images.githubusercontent.com/59962329/200509270-e7b7674d-4e1d-40d0-ba7d-49c4085376d1.png" />
 </p>
-This is a JavaScript + Markdown editor inspired by Jupyter Notebook. This repository contains the web version of NoteJS which lacks proper data persistence but can still quickly showcase the basic functionalities of the app. 
-
+This is a JavaScript + Markdown editor inspired by Jupyter Notebook. This repository contains the web version of NoteJS which lacks proper data persistence but can still quickly showcase the basic functionalities of the app. Any data written into the markdown or code editor can be exported in json format with the "Export Data" button at the bottom of the page. This json file can then be easily loaded and imported into the npx version of the app too. 
 
 The app is deployed at the following site: https://notejs.himathsprojects.xyz/
 
