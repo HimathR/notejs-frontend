@@ -2,6 +2,7 @@ import React from "react";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import Button from "@atlaskit/button";
 import "./footer.css";
+
 const Footer: React.FC = () => {
   const cells = useTypedSelector(({ cells: { order, data } }) => {
     return order.map((id) => data[id]);
