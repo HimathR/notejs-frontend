@@ -16,7 +16,7 @@ import { ActionType } from "./state/action-types";
 const initcontents = `# Welcome to NoteJS!\n
 ### Please Note: This is the **web** version of NoteJS, and only serves as a simple demo of the actual application functionality. 
 To use the full version of NoteJS, please download the npm bundle! Full instructions and code is available in my GitHub repo (inside the info modal below), as well as some other documentation of features. 
-Simply run __**npx himath-notejs serve**__ in your terminal to get started with the full experience, including proper data persistence!
+Simply run __**npx himath-notejs-cli serve**__ in your terminal to get started with the full experience, including proper data persistence!
 For the time being, this web version will not save your data but you can still export any code you write in json form, and import it into the CLI version with the export button.
 
 Click on a **code** or **text** button to get started! You can also click on the NoteJS logo to close this modal.
