@@ -10,7 +10,7 @@ This is a JavaScript + Markdown editor inspired by Jupyter Notebook. This reposi
 ## Usage
 The app is deployed at the following site: https://notejs.himathsprojects.xyz/<br>
 A link to the npx version of this project can be found at this repo: https://github.com/HimathR/notejs. <br>
-Anyone can have the npx version running straight away by simply running `npx himath-notejs serve` on a terminal that has npm installed! 
+Anyone can have the npx version running straight away by simply running `npx himath-notejs-cli serve` on a terminal that has npm installed! 
 
 ## Tech Stack & Features
 This project is written React + TypeScript with Redux being used for state management. The project also utilises Atlassian's Design system for component styling and modals. Bundling is carried out using ESBuild, allowing for super speedy code execution
